@@ -8,7 +8,7 @@ import java.sql.SQLException;
 public class Conexao {
     private static final String URL = "jdbc:mysql://financiai-financiaidatabase.g.aivencloud.com:21022/financiAi?sslMode=REQUIRED";
     private static final String USUARIO = "avnadmin";
-    private static final String SENHA = "AVNS_i3yfmrJMO6CZoDMXouG";
+    private static final String SENHA = "AVNS_rMPiPdqPv39yfgERwOD";
 
     public static Connection conectar() {
         try {

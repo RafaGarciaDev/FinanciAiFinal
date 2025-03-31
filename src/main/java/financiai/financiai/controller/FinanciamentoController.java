@@ -60,10 +60,11 @@ public class FinanciamentoController {
             // Obter dados do formulário
             String nome = nomeClienteField.getText();
             String cpf = cpfClienteField.getText();
-            double renda = Double.parseDouble(rendaClienteField.getText());
-            double valorImovel = Double.parseDouble(valorImovelField.getText());
-            double valorEntrada = Double.parseDouble(valorEntradaField.getText());
-            double taxaJuros = Double.parseDouble(taxaJurosField.getText()) / 100;
+            double renda = Double.parseDouble(rendaClienteField.getText().replace(",", "."));
+            double valorImovel = Double.parseDouble(valorImovelField.getText().replace(",", "."));
+            double valorEntrada = Double.parseDouble(valorEntradaField.getText().replace(",", "."));
+            double taxaJurosMensal = Double.parseDouble(taxaJurosField.getText().replace(",", ".")) / 100;
+            double taxaJuros = Math.pow(1 + taxaJurosMensal, 1.0 / 12) - 1;
             int prazo = Integer.parseInt(prazoField.getText());
             TipoImovel tipoImovel = TipoImovel.valueOf(tipoImovelBox.getValue().toUpperCase());
             TipoAmortizacao tipoAmortizacao = TipoAmortizacao.valueOf(tipoFinanciamentoBox.getValue().toUpperCase());
@@ -76,6 +77,11 @@ public class FinanciamentoController {
 
             // Calcular valor financiado
             double valorFinanciado = valorImovel - valorEntrada;
+            System.out.println("Valor Imóvel: " + valorImovel);
+            System.out.println("Valor Entrada: " + valorEntrada);
+            System.out.println("Valor Financiado: " + valorFinanciado);
+            System.out.println("Taxa de Juros: " + taxaJuros);
+            System.out.println("Prazo: " + prazo);
 
             // Criar objetos de domínio
             cliente = new Cliente(nome, cpf, renda);
@@ -84,8 +90,12 @@ public class FinanciamentoController {
             // Calcular parcelas
             parcelas = tipoAmortizacao.calcularParcela(valorFinanciado, taxaJuros, prazo);
 
-            // Calcular total a pagar
-            double totalPagar = parcelas.stream().mapToDouble(Parcela::getValorParcela).sum();
+            // Verificar valores das parcelas
+            double totalPagar = 0.0;
+            for (Parcela p : parcelas) {
+                System.out.println("Parcela: " + p.getValorParcela());
+                totalPagar += p.getValorParcela();
+            }
 
             // Criar financiamento
             financiamento = new Financiamento(prazo, taxaJuros, tipoAmortizacao, valorEntrada, valorFinanciado, totalPagar);
@@ -106,6 +116,7 @@ public class FinanciamentoController {
             e.printStackTrace();
         }
     }
+
 
     private void verificarTabelas(Connection conexao) throws SQLException {
         DatabaseSetupDAO dbSetup = new DatabaseSetupDAO();
