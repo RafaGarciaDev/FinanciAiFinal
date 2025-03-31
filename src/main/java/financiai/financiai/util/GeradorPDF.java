@@ -1,6 +1,5 @@
 package financiai.financiai.util;
 
-
 import com.itextpdf.text.*;
 import com.itextpdf.text.pdf.PdfPCell;
 import com.itextpdf.text.pdf.PdfPTable;
@@ -44,10 +43,18 @@ public class GeradorPDF {
             headerTable.setSpacingBefore(10);
             headerTable.setSpacingAfter(10);
 
-            // Célula vazia para alinhamento
-            PdfPCell emptyCell = new PdfPCell();
-            emptyCell.setBorder(Rectangle.NO_BORDER);
-            headerTable.addCell(emptyCell);
+            // Adiciona o logo na primeira coluna
+            try {
+                Image logo = Image.getInstance("src/main/resources/images/iconFinanciai.png"); // Caminho atualizado da imagem
+                logo.scaleToFit(200, 200); // Ajusta o tamanho do logo (largura, altura)
+
+                PdfPCell logoCell = new PdfPCell(logo);
+                logoCell.setBorder(Rectangle.NO_BORDER); // Remove a borda da célula
+                logoCell.setHorizontalAlignment(Element.ALIGN_LEFT); // Alinha o logo à esquerda
+                headerTable.addCell(logoCell);
+            } catch (IOException e) {
+                System.err.println("Erro ao carregar o logo: " + e.getMessage());
+            }
 
             // Adiciona informações do financiamento
             PdfPCell infoCell = new PdfPCell();
