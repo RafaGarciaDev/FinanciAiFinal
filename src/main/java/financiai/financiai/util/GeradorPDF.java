@@ -45,7 +45,7 @@ public class GeradorPDF {
 
             // Adiciona o logo na primeira coluna
             try {
-                Image logo = Image.getInstance("src/main/resources/images/iconFinanciai.png"); // Caminho atualizado da imagem
+                Image logo = Image.getInstance("src/main/resources/images/logoFinanciai.png"); // Caminho atualizado da imagem
                 logo.scaleToFit(200, 200); // Ajusta o tamanho do logo (largura, altura)
 
                 PdfPCell logoCell = new PdfPCell(logo);
