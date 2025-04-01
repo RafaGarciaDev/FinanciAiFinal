@@ -1,5 +1,5 @@
 .root {
-    -fx-background-color: #f9f9f9;
+    -fx-background-color: #05bbaa;
     -fx-padding: 20;
 }
 
@@ -104,8 +104,8 @@
 }
 
 .grid-pane {
-    -fx-background-color: white;
-    -fx-border-color: #ddd;
+    -fx-background-color: #11fad4;
+    -fx-border-color: #05bbaa;
     -fx-border-radius: 5;
     -fx-padding: 15;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);

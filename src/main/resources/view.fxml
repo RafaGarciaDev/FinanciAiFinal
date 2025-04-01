@@ -12,9 +12,9 @@
     </stylesheets>
 
     <!-- Logo -->
-    <ImageView fitHeight="80" fitWidth="200" preserveRatio="true">
+    <ImageView fitHeight="120" fitWidth="200" preserveRatio="true">
         <image>
-            <Image url="@/images/financiailogo.jpeg" />
+            <Image url="@/images/logo.png" />
         </image>
     </ImageView>
 
@@ -22,10 +22,10 @@
 
     <GridPane hgap="10" prefHeight="305.0" prefWidth="435.0" styleClass="grid-pane" vgap="10">
         <!-- Campos do formulário -->
-        <Label text="Nome do Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label text="Nome" GridPane.columnIndex="0" GridPane.rowIndex="0" />
         <TextField fx:id="nomeClienteField" prefHeight="25.0" prefWidth="317.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
 
-        <Label text="CPF:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
+        <Label text="CPF" GridPane.columnIndex="0" GridPane.rowIndex="1" />
         <TextField fx:id="cpfClienteField" GridPane.columnIndex="1" GridPane.rowIndex="1" />
 
         <Label text="Renda Mensal:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
