@@ -6,9 +6,9 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class Conexao {
-    private static final String URL = "jdbc:mysql://financiai-financiaidatabase.g.aivencloud.com:21022/financiAi?sslMode=REQUIRED";
+    private static final String URL = "jdbc:mysql://finaciaitext-rafaelgarcia86-f678.g.aivencloud.com:21130/defaultdb?ssl-mode=REQUIRED";
     private static final String USUARIO = "avnadmin";
-    private static final String SENHA = "AVNS_rMPiPdqPv39yfgERwOD";
+    private static final String SENHA = "AVNS_UehnzHsZwgGsPNb0Cuq";
 
     public static Connection conectar() {
         try {

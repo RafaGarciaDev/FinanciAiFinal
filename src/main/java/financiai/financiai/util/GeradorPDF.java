@@ -9,8 +9,10 @@ import financiai.financiai.model.Financiamento;
 import financiai.financiai.model.Imovel;
 import financiai.financiai.model.Parcela;
 
+import javax.imageio.ImageIO;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
@@ -45,16 +47,33 @@ public class GeradorPDF {
 
             // Adiciona o logo na primeira coluna
             try {
-                Image logo = Image.getInstance("src/main/resources/images/logoFinanciai.png"); // Caminho atualizado da imagem
-                logo.scaleToFit(200, 200); // Ajusta o tamanho do logo (largura, altura)
+                InputStream inputStream = GeradorPDF.class.getClassLoader().getResourceAsStream("logoFinanciai.png");
 
-                PdfPCell logoCell = new PdfPCell(logo);
-                logoCell.setBorder(Rectangle.NO_BORDER); // Remove a borda da célula
-                logoCell.setHorizontalAlignment(Element.ALIGN_LEFT); // Alinha o logo à esquerda
-                headerTable.addCell(logoCell);
-            } catch (IOException e) {
+                if (inputStream != null) {
+                    Image logo = Image.getInstance(ImageIO.read(inputStream), null);
+                    logo.scaleToFit(200, 200); // Ajusta o tamanho
+
+                    // Criando uma célula e adicionando a imagem corretamente
+                    PdfPCell logoCell = new PdfPCell();
+                    logoCell.addElement(logo);
+                    logoCell.setBorder(Rectangle.NO_BORDER); // Remove borda da célula
+                    logoCell.setHorizontalAlignment(Element.ALIGN_LEFT); // Alinha o logo à esquerda
+
+                    // Criando tabela para alinhar a logo
+                    PdfPTable logoTable = new PdfPTable(1);
+                    logoTable.setWidthPercentage(100);
+                    logoTable.addCell(logoCell);
+
+                    // Adiciona ao documento e ao cabeçalho
+                    headerTable.addCell(logoCell);
+                } else {
+                    document.add(new Paragraph("⚠ Logo não encontrada!", new Font(Font.FontFamily.HELVETICA, 12, Font.BOLD)));
+                }
+
+            } catch (IOException | BadElementException e) {
                 System.err.println("Erro ao carregar o logo: " + e.getMessage());
             }
+
 
             // Adiciona informações do financiamento
             PdfPCell infoCell = new PdfPCell();
