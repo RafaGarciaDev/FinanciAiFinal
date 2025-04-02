@@ -87,7 +87,6 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
 }
 
-/* Estilo para os campos de entrada */
 .text-field {
     -fx-background-radius: 5;
     -fx-border-radius: 5;
@@ -95,12 +94,11 @@
     -fx-padding: 5;
 }
 
-/* Estilo para as ChoiceBox */
 .choice-box {
     -fx-background-radius: 5;
     -fx-border-radius: 5;
     -fx-border-color: #000000;
-    -fx-pref-width: 150px;
+    -fx-pref-width: 180px;
     -fx-width: 100%;
     -fx-font-size: 15px;
     -fx-background-color: #fff;
@@ -131,7 +129,7 @@
 }
 
 .choice-box .menu-item .label {
-    -fx-text-fill: #000000; /* Cor da fonte */
+    -fx-text-fill: #000000;
 }
 
 .grid-pane {
@@ -144,10 +142,9 @@
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
 }
 .status-banco {
-    -fx-text-fill: #2e8b57; /* Verde para status OK */
+    -fx-text-fill: #2e8b57;
     -fx-font-weight: bold;
 }
-/* Adicione estas regras ao seu arquivo CSS existente */
 
 .titulo {
     -fx-font-size: 18px;
@@ -219,11 +216,17 @@
 .underline-field {
     -fx-background-color: transparent;
     -fx-background-insets: 0;
-    -fx-border-color: #000000; /* Cor da linha inferior */
-    -fx-border-width: 0 0 1 0; /* Apenas borda inferior */
-    -fx-border-insets: 0 0 1 0; /* Ajuste da posição */
+    -fx-border-color: #000000;
+    -fx-border-width: 0 0 1 0;
+    -fx-border-insets: 0 0 1 0;
 }
 
 .underline-field:focused {
-    -fx-border-color: #3a86ff; /* Cor quando focado (opcional) */
+    -fx-border-color: #3a86ff;
+        -fx-border-width: 0 0 2px 0;
+}
+
+.lacuna {
+    -fx-alignment: center-left;
+    -fx-padding: 0 10px 0 0;
 }

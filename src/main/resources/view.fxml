@@ -22,26 +22,19 @@
 
     <GridPane hgap="10" prefHeight="305.0" prefWidth="435.0" styleClass="grid-pane" vgap="10">
         <!-- Campos do formulário -->
-        <Label styleClass="lacuna" text="Nome" GridPane.columnIndex="0" GridPane.rowIndex="0" />
-        <TextField fx:id="nomeClienteField" prefHeight="25.0" prefWidth="317.0" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="underline-field"/>
+        <TextField fx:id="nomeClienteField" promptText="Digite seu nome" prefHeight="25.0" prefWidth="317.0" GridPane.columnIndex="1" GridPane.rowIndex="0" styleClass="underline-field"/>
 
-        <Label text="CPF" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <TextField fx:id="cpfClienteField" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="underline-field" />
+        <TextField fx:id="cpfClienteField" promptText="Digite seu CPF:" GridPane.columnIndex="1" GridPane.rowIndex="1" styleClass="underline-field" />
 
-        <Label text="Renda Mensal" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <TextField fx:id="rendaClienteField" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="underline-field" />
+        <TextField fx:id="rendaClienteField" promptText="Digite renda total em R$" GridPane.columnIndex="1" GridPane.rowIndex="2" styleClass="underline-field" />
 
-        <Label text="Valor do Imóvel" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <TextField fx:id="valorImovelField" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="underline-field" />
+        <TextField fx:id="valorImovelField" promptText="Digite o valor do imovel em R$" GridPane.columnIndex="1" GridPane.rowIndex="3" styleClass="underline-field" />
 
-        <Label text="Valor de Entrada" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <TextField fx:id="valorEntradaField" prefHeight="25.0" prefWidth="326.0" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="underline-field" />
+        <TextField fx:id="valorEntradaField" promptText="Digite o valor da entrada em R$" prefHeight="25.0" prefWidth="326.0" GridPane.columnIndex="1" GridPane.rowIndex="4" styleClass="underline-field" />
 
-        <Label text="Taxa de Juros" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-        <TextField fx:id="taxaJurosField" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="underline-field" />
+        <TextField fx:id="taxaJurosField" promptText="Digite o porcentual da taxa" GridPane.columnIndex="1" GridPane.rowIndex="5" styleClass="underline-field" />
 
-        <Label text="Prazo (meses)" GridPane.columnIndex="0" GridPane.rowIndex="6" />
-        <TextField fx:id="prazoField" GridPane.columnIndex="1" GridPane.rowIndex="6" styleClass="underline-field" />
+        <TextField fx:id="prazoField" promptText="Digite o prazo(meses)" GridPane.columnIndex="1" GridPane.rowIndex="6" styleClass="underline-field" />
 
         <Label text="Tipo de Imóvel" GridPane.columnIndex="0" GridPane.rowIndex="7" />
         <ChoiceBox fx:id="tipoImovelBox" GridPane.columnIndex="1" GridPane.rowIndex="7" styleClass="custom"/>
