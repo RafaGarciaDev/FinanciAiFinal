@@ -104,9 +104,7 @@
     -fx-width: 100%;
     -fx-font-size: 15px;
     -fx-background-color: #fff;
-    -fx-color: #000000;
     -fx-cursor: pointer;
-    -fx-text-fill: #000000;
 }
 
 .choice-box::before,
