@@ -46,7 +46,7 @@ public class ResultPageController {
         resumoTotalPagar.setText(String.format("R$ %.2f", financiamento.getTotalPagar()));
 
         // Exibe status da simulação
-        simulacaoResultLabel.setText("Simulação concluída com sucesso!");
+        simulacaoResultLabel.setText("");
 
         // Preenche a tabela de parcelas
         StringBuilder sb = new StringBuilder();

@@ -82,6 +82,8 @@
     -fx-background-color: white;
     -fx-border-color: #5ea2ff;
     -fx-padding: 15;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
 }
 
@@ -89,7 +91,7 @@
 .text-field {
     -fx-background-radius: 5;
     -fx-border-radius: 5;
-    -fx-border-color: #ddd;
+    -fx-border-color: #000000;
     -fx-padding: 5;
 }
 
@@ -97,8 +99,41 @@
 .choice-box {
     -fx-background-radius: 5;
     -fx-border-radius: 5;
-    -fx-border-color: #ddd;
-    -fx-pref-width: 150;
+    -fx-border-color: #000000;
+    -fx-pref-width: 150px;
+    -fx-width: 100%;
+    -fx-font-size: 15px;
+    -fx-background-color: #fff;
+    -fx-color: #000000;
+    -fx-cursor: pointer;
+    -fx-text-fill: #000000;
+}
+
+.choice-box::before,
+.choice-box::after {
+  --size: 0.3rem;
+  content: "";
+  position: absolute;
+  right: 1rem;
+  pointer-events: none;
+}
+
+.choice-box::before {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-bottom: var(--size) solid black;
+  top: 40%;
+}
+
+.choice-box::after {
+  border-left: var(--size) solid transparent;
+  border-right: var(--size) solid transparent;
+  border-top: var(--size) solid black;
+  top: 55%;
+}
+
+.choice-box .menu-item .label {
+    -fx-text-fill: #000000; /* Cor da fonte */
 }
 
 .grid-pane {
@@ -106,6 +141,8 @@
     -fx-border-color: #5ea2ff;
     -fx-radius: 5;
     -fx-padding: 15;
+    -fx-background-radius: 5;
+    -fx-border-radius: 5;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
 }
 .status-banco {
@@ -173,6 +210,8 @@
     -fx-background-color: #ff0000;
     -fx-text-fill: white;
     -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15 8 15;
 }
 
 .botao-delete:hover {
@@ -184,7 +223,7 @@
     -fx-background-insets: 0;
     -fx-border-color: #000000; /* Cor da linha inferior */
     -fx-border-width: 0 0 1 0; /* Apenas borda inferior */
-    -fx-border-insets: 0 0 0 0; /* Ajuste da posição */
+    -fx-border-insets: 0 0 1 0; /* Ajuste da posição */
 }
 
 .underline-field:focused {

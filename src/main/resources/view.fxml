@@ -44,10 +44,10 @@
         <TextField fx:id="prazoField" GridPane.columnIndex="1" GridPane.rowIndex="6" styleClass="underline-field" />
 
         <Label text="Tipo de Imóvel" GridPane.columnIndex="0" GridPane.rowIndex="7" />
-        <ChoiceBox fx:id="tipoImovelBox" GridPane.columnIndex="1" GridPane.rowIndex="7" />
+        <ChoiceBox fx:id="tipoImovelBox" GridPane.columnIndex="1" GridPane.rowIndex="7" styleClass="custom"/>
 
         <Label text="Tipo de Financiamento" GridPane.columnIndex="0" GridPane.rowIndex="8" />
-        <ChoiceBox fx:id="tipoFinanciamentoBox" GridPane.columnIndex="1" GridPane.rowIndex="8" />
+        <ChoiceBox fx:id="tipoFinanciamentoBox" GridPane.columnIndex="1" GridPane.rowIndex="8" styleClass=""/>
 
         <columnConstraints>
             <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />

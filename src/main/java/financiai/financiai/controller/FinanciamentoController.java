@@ -43,7 +43,7 @@ public class FinanciamentoController {
     @FXML
     public void initialize() {
         tipoImovelBox.getItems().addAll("Casa", "Apartamento");
-        tipoFinanciamentoBox.getItems().addAll("SAC", "Price");
+        tipoFinanciamentoBox.getItems().addAll("SAC", "PRICE");
 
         // Verificar estrutura do banco ao iniciar
         verificarEstruturaBanco();
@@ -66,7 +66,7 @@ public class FinanciamentoController {
             parcelasDAO.verificarTabela(conexao);
 
             bancoPronto = true;
-            statusBancoLabel.setText("Banco de dados pronto!");
+            statusBancoLabel.setText("");
         } catch (SQLException e) {
             bancoPronto = false;
             statusBancoLabel.setText("Erro no banco de dados!");
