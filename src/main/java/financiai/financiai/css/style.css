@@ -1,33 +1,68 @@
+/* Estilos base */
 .root {
     -fx-background-color: #f4f4f4;
     -fx-padding: 20;
+    -fx-font-family: 'Segoe UI', Arial, sans-serif;
 }
 
+/* Estilos de texto */
 .titulo {
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
-    -fx-font-fill: white;
-}
-
-.titulo-resultado {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
     -fx-text-fill: #2c3e50;
-    -fx-padding: 10 0 10 0;
+    -fx-padding: 0 0 10 0;
 }
 
-.subtitulo {
+.resultado-label {
     -fx-font-size: 16px;
     -fx-font-weight: bold;
-    -fx-text-fill: #34495e;
+    -fx-text-fill: #27ae60;
+    -fx-padding: 10 0 0 0;
 }
 
+.status-banco {
+    -fx-font-size: 14px;
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+/* Estilos para campos de formulário */
+.floating-field {
+    -fx-background-color: transparent;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 0 0 1 0;
+    -fx-padding: 5 0 5 0;
+    -fx-font-size: 14px;
+    -fx-prompt-text-fill: #95a5a6;
+}
+
+.floating-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 0 0 2 0;
+    -fx-prompt-text-fill: derive(#95a5a6, 30%);
+}
+
+.choice-box {
+    -fx-background-color: white;
+    -fx-border-color: blue;
+    -fx-border-radius: 3;
+    -fx-padding: 5;
+    -fx-font-size: 14px;
+    -fx-pref-width: 300;
+}
+
+.choice-box .context-menu {
+    -fx-pref-width: 300;
+}
+
+/* Estilos para botões */
 .botao-primario {
     -fx-background-color: #3498db;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-background-radius: 5;
-    -fx-padding: 8 15 8 15;
+    -fx-padding: 8 15;
+    -fx-font-size: 14px;
 }
 
 .botao-primario:hover {
@@ -35,198 +70,43 @@
 }
 
 .botao-secundario {
-    -fx-background-color: #e74c3c;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-background-radius: 5;
-    -fx-padding: 8 15 8 15;
-}
-
-.botao-secundario:hover {
-    -fx-background-color: #c0392b;
-}
-
-.botao-exportar {
     -fx-background-color: #2ecc71;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-background-radius: 5;
-    -fx-padding: 8 15 8 15;
-}
-
-.botao-exportar:hover {
-    -fx-background-color: #27ae60;
-}
-
-.label-destaque {
-    -fx-font-weight: bold;
-    -fx-text-fill: #34495e;
-}
-
-.status-label {
-    -fx-font-weight: bold;
-    -fx-text-fill: #e74c3c;
-}
-
-.tabela-parcelas {
-    -fx-font-family: monospace;
-    -fx-font-size: 12px;
-    -fx-pref-height: 200;
-    -fx-pref-width: 500;
-    -fx-background-color: white;
-    -fx-border-color: #5ea2ff;
-    -fx-padding: 10;
-}
-
-.resumo-container {
-    -fx-background-color: white;
-    -fx-border-color: #5ea2ff;
-    -fx-padding: 15;
-    -fx-background-radius: 5;
-    -fx-border-radius: 5;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
-}
-
-.text-field {
-    -fx-background-radius: 5;
-    -fx-border-radius: 5;
-    -fx-border-color: #000000;
-    -fx-padding: 5;
-}
-
-.choice-box {
-    -fx-background-radius: 5;
-    -fx-border-radius: 5;
-    -fx-border-color: #000000;
-    -fx-pref-width: 180px;
-    -fx-width: 100%;
-    -fx-font-size: 15px;
-    -fx-background-color: #fff;
-    -fx-cursor: pointer;
-}
-
-.choice-box::before,
-.choice-box::after {
-  --size: 0.3rem;
-  content: "";
-  position: absolute;
-  right: 1rem;
-  pointer-events: none;
-}
-
-.choice-box::before {
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-bottom: var(--size) solid black;
-  top: 40%;
-}
-
-.choice-box::after {
-  border-left: var(--size) solid transparent;
-  border-right: var(--size) solid transparent;
-  border-top: var(--size) solid black;
-  top: 55%;
-}
-
-.choice-box .menu-item .label {
-    -fx-text-fill: #000000;
-}
-
-.grid-pane {
-    -fx-background-color: #ffffff;
-    -fx-border-color: #5ea2ff;
-    -fx-radius: 5;
-    -fx-padding: 15;
-    -fx-background-radius: 5;
-    -fx-border-radius: 5;
-    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
-}
-.status-banco {
-    -fx-text-fill: #2e8b57;
-    -fx-font-weight: bold;
-}
-
-.titulo {
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
-}
-
-.table-cell {
-    -fx-alignment: CENTER-RIGHT;
-    -fx-padding: 5px;
-}
-
-.botao-secundario {
-    -fx-background-color: #6c757d;
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-    -fx-padding: 5px 15px;
+    -fx-padding: 8 15;
+    -fx-font-size: 14px;
 }
 
 .botao-secundario:hover {
-    -fx-background-color: #5a6268;
-}
-
-.table-view {
-    -fx-base: #f8f9fa;
-    -fx-control-inner-background: #ffffff;
-    -fx-background-color: #ffffff;
-    -fx-table-cell-border-color: transparent;
-    -fx-table-header-border-color: #dee2e6;
-    -fx-padding: 5;
-}
-
-.table-view .column-header-background {
-    -fx-background-color: #343a40;
-}
-
-.table-view .column-header, .table-view .filler {
-    -fx-background-color: transparent;
-    -fx-border-width: 0 0 1 0;
-    -fx-border-color: #dee2e6;
-    -fx-text-fill: white;
-}
-
-.table-view .column-header .label {
-    -fx-text-fill: white;
-    -fx-font-weight: bold;
-}
-
-.table-row-cell:odd {
-    -fx-background-color: #f8f9fa;
-}
-
-.table-row-cell:selected {
-    -fx-background-color: #007bff;
-    -fx-text-fill: white;
+    -fx-background-color: #27ae60;
 }
 
 .botao-delete {
-    -fx-background-color: #ff0000;
+    -fx-background-color: #e74c3c;
     -fx-text-fill: white;
     -fx-font-weight: bold;
     -fx-background-radius: 5;
-    -fx-padding: 8 15 8 15;
+    -fx-padding: 8 15;
+    -fx-font-size: 14px;
 }
 
 .botao-delete:hover {
-    -fx-background-color: #b40000;
+    -fx-background-color: #c0392b;
 }
 
-.underline-field {
-    -fx-background-color: transparent;
-    -fx-background-insets: 0;
-    -fx-border-color: #000000;
-    -fx-border-width: 0 0 1 0;
-    -fx-border-insets: 0 0 1 0;
+/* Estilos para GridPane */
+.grid-pane {
+    -fx-border-color: blue;
+    -fx-background-color: white;
+    -fx-padding: 20;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
 }
 
-.underline-field:focused {
-    -fx-border-color: #3a86ff;
-        -fx-border-width: 0 0 2px 0;
-}
-
-.lacuna {
-    -fx-alignment: center-left;
-    -fx-padding: 0 10px 0 0;
+/* Estilos para labels dos campos */
+.label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+    -fx-padding: 0 10 0 0;
 }
