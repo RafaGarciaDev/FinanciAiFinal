@@ -14,7 +14,7 @@
 
     <Label text="Parcelas do Financiamento" styleClass="titulo" />
 
-    <TableView fx:id="tabelaParcelas" prefHeight="400" prefWidth="600">
+    <TableView styleClass="parcelas" fx:id="tabelaParcelas" prefHeight="400" prefWidth="600">
         <columns>
             <TableColumn fx:id="colunaNumero" text="Nº Parcela" prefWidth="80"/>
             <TableColumn fx:id="colunaValor" text="Valor (R$)" prefWidth="120"/>

@@ -1,69 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<?import java.net.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+<?import java.net.URL?>
 
-<VBox alignment="TOP_CENTER" prefHeight="740.0" prefWidth="774.0" spacing="20" style="-fx-padding: 30; -fx-background-color: #f5f5f5;" xmlns="http://javafx.com/javafx/11.0.14-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="financiai.financiai.controller.ResultPageController">
+<VBox xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="financiai.financiai.controller.ResultPageController"
+      styleClass="result-root" spacing="20" alignment="TOP_CENTER">
 
     <stylesheets>
         <URL value="@/financiai/financiai/css/style.css" />
     </stylesheets>
 
-    <!-- Restante do conteúdo permanece igual -->
-    <Label styleClass="titulo-resultado" text="RESULTADO DA SIMULAÇÃO" />
+    <Label styleClass="result-title" text="RESULTADO DA SIMULAÇÃO"/>
 
-    <GridPane hgap="10" prefHeight="192.0" prefWidth="268.0" styleClass="resumo-container" vgap="10">
-        <Label prefHeight="25.0" prefWidth="698.0" styleClass="subtitulo" text="Resumo do Financiamento" GridPane.columnSpan="2" />
+    <VBox styleClass="result-summary">
+        <Label styleClass="summary-title" text="Resumo do Financiamento"/>
 
-        <Label text="Nome do Cliente:" GridPane.columnIndex="0" GridPane.rowIndex="1" />
-        <Label fx:id="resumoNomeCliente" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+        <GridPane styleClass="summary-grid" prefWidth="700">
+            <Label text="Nome do Cliente:" styleClass="summary-label" GridPane.rowIndex="0" GridPane.columnIndex="0"/>
+            <Label fx:id="resumoNomeCliente" styleClass="summary-value" GridPane.rowIndex="0" GridPane.columnIndex="1"/>
 
-        <Label text="Valor Financiado:" GridPane.columnIndex="0" GridPane.rowIndex="2" />
-        <Label fx:id="resumoValorFinanciado" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <Label text="Valor Financiado:" styleClass="summary-label" GridPane.rowIndex="1" GridPane.columnIndex="0"/>
+            <Label fx:id="resumoValorFinanciado" styleClass="summary-value" GridPane.rowIndex="1" GridPane.columnIndex="1"/>
 
-        <Label text="Parcelas:" GridPane.columnIndex="0" GridPane.rowIndex="3" />
-        <Label fx:id="resumoParcelas" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <Label text="Parcelas:" styleClass="summary-label" GridPane.rowIndex="2" GridPane.columnIndex="0"/>
+            <Label fx:id="resumoParcelas" styleClass="summary-value" GridPane.rowIndex="2" GridPane.columnIndex="1"/>
 
-        <Label text="Valor da Parcela:" GridPane.columnIndex="0" GridPane.rowIndex="4" />
-        <Label fx:id="resumoValorParcela" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <Label text="Valor da Parcela:" styleClass="summary-label" GridPane.rowIndex="3" GridPane.columnIndex="0"/>
+            <Label fx:id="resumoValorParcela" styleClass="summary-value" GridPane.rowIndex="3" GridPane.columnIndex="1"/>
 
-        <Label text="Total a Pagar:" GridPane.columnIndex="0" GridPane.rowIndex="5" />
-        <Label fx:id="resumoTotalPagar" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <Label text="Total a Pagar:" styleClass="summary-label" GridPane.rowIndex="4" GridPane.columnIndex="0"/>
+            <Label fx:id="resumoTotalPagar" styleClass="summary-value highlight" GridPane.rowIndex="4" GridPane.columnIndex="1"/>
 
-        <columnConstraints>
-            <ColumnConstraints halignment="RIGHT" hgrow="NEVER" />
-            <ColumnConstraints hgrow="SOMETIMES" />
-        </columnConstraints>
-        <rowConstraints>
-            <RowConstraints vgrow="SOMETIMES" />
-            <RowConstraints vgrow="SOMETIMES" />
-            <RowConstraints vgrow="SOMETIMES" />
-            <RowConstraints vgrow="SOMETIMES" />
-            <RowConstraints vgrow="SOMETIMES" />
-            <RowConstraints vgrow="SOMETIMES" />
-        </rowConstraints>
-    </GridPane>
+            <columnConstraints>
+                <ColumnConstraints hgrow="NEVER" halignment="RIGHT"/>
+                <ColumnConstraints hgrow="NEVER" halignment="LEFT"/>
+            </columnConstraints>
+            <rowConstraints>
+                <RowConstraints minHeight="30"/>
+                <RowConstraints minHeight="30"/>
+                <RowConstraints minHeight="30"/>
+                <RowConstraints minHeight="30"/>
+                <RowConstraints minHeight="30"/>
+            </rowConstraints>
+        </GridPane>
+    </VBox>
 
-    <Label prefHeight="63.0" prefWidth="255.0" styleClass="subtitulo" text="DETALHAMENTO DAS PARCELAS:" />
+    <Label styleClass="section-title" text="DETALHAMENTO DAS PARCELAS:"/>
 
-    <TextArea fx:id="tabelaParcelasArea" prefHeight="237.0" prefWidth="714.0" styleClass="tabela-parcelas" wrapText="true" />
+    <TextArea fx:id="tabelaParcelasArea" styleClass="parcelas-text-area" wrapText="true"/>
 
-
-
-
-    <!-- Botões movidos para cima do logo -->
     <HBox alignment="CENTER" spacing="20">
-        <Button onAction="#gerarPDF" styleClass="botao-exportar" text="Exportar PDF">
+        <Button onAction="#gerarPDF" styleClass="export-button" text="Exportar PDF">
             <tooltip>
-                <Tooltip text="Gerar relatório em PDF com os detalhes" />
+                <Tooltip text="Gerar relatório em PDF com os detalhes"/>
             </tooltip>
         </Button>
-
-        <Button onAction="#voltar" styleClass="botao-secundario" text="Nova Simulação" />
+        <Button onAction="#voltar" styleClass="new-simulation-button" text="Nova Simulação"/>
     </HBox>
 
-    <HBox alignment="CENTER" spacing="10">
-        <Label fx:id="simulacaoResultLabel" styleClass="status-label" />
+    <HBox alignment="CENTER">
+        <Label fx:id="simulacaoResultLabel" styleClass="status-label"/>
     </HBox>
 </VBox>
