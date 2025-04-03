@@ -5,7 +5,7 @@
     -fx-font-family: 'Segoe UI', Arial, sans-serif;
 }
 
-/* Estilos de texto */
+/* ========== ESTILOS GERAIS ========== */
 .titulo {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
@@ -13,20 +13,19 @@
     -fx-padding: 0 0 10 0;
 }
 
-.resultado-label {
-    -fx-font-size: 16px;
+.titulo-resultado {
+    -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: #27ae60;
-    -fx-padding: 10 0 0 0;
+    -fx-text-fill: #2c3e50;
 }
 
-.status-banco {
-    -fx-font-size: 14px;
-    -fx-text-fill: #e74c3c;
+.subtitulo {
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
 }
 
-/* Estilos para campos de formulário */
+/* ========== FORMULÁRIO ========== */
 .floating-field {
     -fx-background-color: transparent;
     -fx-border-color: #bdc3c7;
@@ -44,7 +43,7 @@
 
 .choice-box {
     -fx-background-color: white;
-    -fx-border-color: blue;
+    -fx-border-color: #3498db;
     -fx-border-radius: 3;
     -fx-padding: 5;
     -fx-font-size: 14px;
@@ -55,7 +54,7 @@
     -fx-pref-width: 300;
 }
 
-/* Estilos para botões */
+/* ========== BOTÕES ========== */
 .botao-primario {
     -fx-background-color: #3498db;
     -fx-text-fill: white;
@@ -95,18 +94,133 @@
     -fx-background-color: #c0392b;
 }
 
-/* Estilos para GridPane */
+.export-button {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+    -fx-font-size: 14px;
+}
+
+.export-button:hover {
+    -fx-background-color: #c0392b;
+}
+
+.new-simulation-button {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 5;
+    -fx-padding: 8 15;
+    -fx-font-size: 14px;
+}
+
+.new-simulation-button:hover {
+    -fx-background-color: #2980b9;
+}
+
+/* ========== LAYOUTS ========== */
 .grid-pane {
-    -fx-border-color: blue;
     -fx-background-color: white;
+    -fx-border-color: #3498db;
     -fx-padding: 20;
     -fx-background-radius: 5;
     -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
 }
 
-/* Estilos para labels dos campos */
+/* ========== TELA DE RESULTADOS ========== */
+.result-root {
+    -fx-background-color: #f5f7fa;
+    -fx-padding: 30;
+    -fx-spacing: 20;
+}
+
+.result-title {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #2c3e50;
+}
+
+.section-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #34495e;
+}
+
+.summary-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #3498db;
+    -fx-padding: 0 0 15 0;
+}
+
+.result-summary {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-padding: 20;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+}
+
+.summary-grid {
+    -fx-hgap: 15;
+    -fx-vgap: 10;
+}
+
+.summary-label {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #7f8c8d;
+}
+
+.summary-value {
+    -fx-font-size: 14px;
+    -fx-text-fill: #2c3e50;
+}
+
+.highlight {
+    -fx-font-weight: bold;
+    -fx-text-fill: #e74c3c;
+}
+
+.parcelas-text-area {
+    -fx-font-family: monospace;
+    -fx-font-size: 12px;
+    -fx-background-color: white;
+    -fx-border-color: #bdc3c7;
+    -fx-border-radius: 3;
+    -fx-padding: 5;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 5, 0, 0, 0);
+}
+
+/* ========== STATUS E LABELS ========== */
+.status-label {
+    -fx-font-size: 14px;
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+.status-banco {
+    -fx-font-size: 14px;
+    -fx-text-fill: #e74c3c;
+    -fx-font-weight: bold;
+}
+
+.resultado-label {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #27ae60;
+    -fx-padding: 10 0 0 0;
+}
+
+/* ========== COMPONENTES ESPECÍFICOS ========== */
 .label {
     -fx-font-size: 14px;
     -fx-text-fill: #2c3e50;
     -fx-padding: 0 10 0 0;
+}
+
+.parcelas {
+    -fx-border-color: #3498db;
+    -fx-border-width: 1;
 }
